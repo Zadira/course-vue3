@@ -53,7 +53,7 @@ const App = {
       return this.activeIndex === 0
     },
     isFinalStep() {
-      return this.activeIndex !== this.steps.length - 1
+      return this.activeIndex === this.steps.length - 1
     },
   }
 }

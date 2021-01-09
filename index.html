@@ -18,8 +18,8 @@
           <li
             :class="{
               'steps-item': true,
-              'done': activeIndex < idx ? false : true,
-              'active': activeIndex === idx ? true : false
+              'done': activeIndex > idx,
+              'active': activeIndex === idx
             }"
             v-for="(step, idx) in steps"
           >
@@ -28,7 +28,7 @@
         </ul>
         <div v-if="isActive">
           <button class="btn" @click="prev" :disabled="isBack">Назад</button>
-          <button class="btn primary" @click="nextOfFinish">{{ isFinalStep ? "Вперед" : "Закончить" }}</button>
+          <button class="btn primary" @click="nextOfFinish">{{ isFinalStep ? "Закончить" : "Вперед" }}</button>
         </div>
         <div v-else><button class="btn" @click="reset">Начать заного</button></div>
       </div>
